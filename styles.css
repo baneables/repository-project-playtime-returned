@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: #0c0f18;
+    color: #e4e8ff;
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 60px;
+    background: #101626;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #005bff;
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #ff003c;
+}
+
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #aab4ff;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff003c;
+}
+
+.section {
+    padding: 150px 60px 120px 60px;
+    text-align: center;
+}
+
+.section h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    color: #005bff;
+}
+
+.section p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+    color: #d0d6ff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.card {
+    background: #141a2b;
+    padding: 35px;
+    border: 2px solid #1f2a4d;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #ff003c;
+    background: #1b2340;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.img {
+    width: 300px;
+    height: 180px;
+    background: #1c2442;
+    border: 2px solid #1f2a4d;
+    transition: 0.3s;
+}
+
+.img:hover {
+    border-color: #ff003c;
+    transform: scale(1.05);
+}
+
+.roadmap {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2rem;
+    margin-top: 40px;
+}
+
+.roadmap li {
+    margin: 20px 0;
+}
+
+.platform-selector {
+    margin: 40px 0;
+}
+
+.platform {
+    padding: 15px 40px;
+    margin: 8px;
+    border: 2px solid #005bff;
+    background: transparent;
+    color: #e4e8ff;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.platform:hover {
+    background: #005bff;
+}
+
+.platform.active {
+    background: #ff003c;
+    border-color: #ff003c;
+}
+
+.platform.disabled {
+    border-color: #333;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 20px 60px;
+    background: #ff003c;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border: 2px solid #ff003c;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: transparent;
+    color: #ff003c;
+}
+
+footer {
+    background: #101626;
+    padding: 30px;
+    text-align: center;
+    border-top: 3px solid #005bff;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
