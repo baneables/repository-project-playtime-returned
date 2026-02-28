@@ -1,6 +1,16 @@
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+if(menuToggle){
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+}
+
 const buttons = document.querySelectorAll(".platform");
 const downloadBtn = document.getElementById("downloadBtn");
 
+if(buttons){
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         if (button.classList.contains("disabled")) return;
@@ -21,3 +31,4 @@ buttons.forEach(button => {
         }
     });
 });
+}
