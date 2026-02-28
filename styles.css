@@ -164,3 +164,40 @@ footer {
     font-size: 0.8rem;
     letter-spacing: 2px;
 }
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ff003c;
+}
+
+nav {
+    display: flex;
+}
+
+@media (max-width: 900px) {
+
+    nav {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: #101626;
+        flex-direction: column;
+        width: 220px;
+        display: none;
+        padding: 20px;
+        border-left: 3px solid #005bff;
+    }
+
+    nav a {
+        margin: 15px 0;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
