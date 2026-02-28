@@ -6,15 +6,21 @@
 <title>Project Playtime Returned</title>
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<script src="script.js" defer></script>
 </head>
 <body>
 
 <header>
     <div class="logo">PROJECT PLAYTIME RETURNED</div>
-    <nav>
-        <a href="#about">Historia</a>
-        <a href="#features">Características</a>
-        <a href="#gallery">Galería</a>
+
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+
+    <nav id="navMenu">
+        <a href="#historia">Historia</a>
+        <a href="#caracteristicas">Características</a>
+        <a href="#galeria">Galería</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#download">Descargar</a>
     </nav>
@@ -22,74 +28,79 @@
 
 <section class="hero">
     <div class="hero-content">
-        <h1>La fábrica nunca duerme</h1>
-        <p>Una experiencia multijugador intensa inspirada en el terror cooperativo industrial.</p>
+        <h1>LA FÁBRICA SIGUE ABIERTA</h1>
+        <p>Seis jugadores. Una criatura. Una fábrica que nunca duerme.</p>
         <a href="#download" class="cta">Jugar Ahora</a>
     </div>
 </section>
 
-<section id="about" class="section">
-    <h2>Historia</h2>
-    <p>Regresa a la fábrica abandonada donde seis jugadores deben colaborar para sobrevivir mientras una criatura los acecha. Cada partida es diferente, cada sombra puede ser tu final.</p>
+<section id="historia" class="section">
+<h1>Historia</h1>
+<p>
+La fábrica reactivó sus sistemas tras años cerrada. 
+Los juguetes desaparecieron. Las cámaras dejaron de funcionar.
+Ahora seis operarios deben completar los puzzles industriales 
+mientras algo acecha en los conductos de ventilación.
+</p>
 </section>
 
-<section id="features" class="section dark">
-    <h2>Características</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Multijugador 6v1</h3>
-            <p>Seis supervivientes contra una criatura imparable.</p>
-        </div>
-        <div class="card">
-            <h3>Mapas dinámicos</h3>
-            <p>Eventos aleatorios que cambian cada partida.</p>
-        </div>
-        <div class="card">
-            <h3>Sistema de habilidades</h3>
-            <p>Personaliza tu estilo de juego.</p>
-        </div>
-        <div class="card">
-            <h3>Ambiente inmersivo</h3>
-            <p>Iluminación oscura y diseño industrial detallado.</p>
-        </div>
-    </div>
+<section id="caracteristicas" class="section">
+<h1>Características</h1>
+<div class="grid">
+<div class="card">
+<h3>6v1 Asimétrico</h3>
+<p>Supervivientes cooperativos contra una criatura experimental.</p>
+</div>
+<div class="card">
+<h3>Mapas Dinámicos</h3>
+<p>Eventos aleatorios que cambian cada partida.</p>
+</div>
+<div class="card">
+<h3>Sistema de Progresión</h3>
+<p>Desbloquea mejoras y ventajas únicas.</p>
+</div>
+<div class="card">
+<h3>Ambiente Industrial</h3>
+<p>Iluminación oscura, sirenas y maquinaria activa.</p>
+</div>
+</div>
 </section>
 
-<section id="gallery" class="section">
-    <h2>Galería</h2>
-    <div class="gallery">
-        <div class="img"></div>
-        <div class="img"></div>
-        <div class="img"></div>
-    </div>
+<section id="galeria" class="section">
+<h1>Galería</h1>
+<div class="gallery">
+<div class="img"></div>
+<div class="img"></div>
+<div class="img"></div>
+</div>
 </section>
 
-<section id="roadmap" class="section dark">
-    <h2>Roadmap</h2>
-    <ul class="roadmap">
-        <li>✔ Beta Cerrada</li>
-        <li>✔ Modo Clasificatorio</li>
-        <li>🔄 Nuevo Mapa Industrial</li>
-        <li>🔜 Compatibilidad Mac</li>
-    </ul>
+<section id="roadmap" class="section">
+<h1>Roadmap</h1>
+<ul class="roadmap">
+<li>✔ Beta Cerrada</li>
+<li>✔ Sistema de Rangos</li>
+<li>🔄 Nuevo Monstruo</li>
+<li>🔜 Nuevo Mapa Industrial</li>
+<li>🔜 Soporte Mac</li>
+</ul>
 </section>
 
 <section id="download" class="section">
-    <h2>Descargar</h2>
+<h1>Descargar</h1>
 
-    <div class="platform-selector">
-        <button class="platform active" data-platform="windows">Windows</button>
-        <button class="platform" data-platform="linux">Linux</button>
-        <button class="platform disabled" data-platform="mac">Mac (Próximamente)</button>
-    </div>
+<div class="platform-selector">
+<button class="platform active" data-platform="windows">Windows</button>
+<button class="platform" data-platform="linux">Linux</button>
+<button class="platform disabled">Mac (Próximamente)</button>
+</div>
 
-    <a id="downloadBtn" class="download-btn" href="#">Descargar para Windows</a>
+<a id="downloadBtn" class="download-btn" href="#">Descargar para Windows</a>
 </section>
 
 <footer>
-    <p>© 2026 Project Playtime Returned. No afiliado a ningún estudio oficial.</p>
+© 2026 Project Playtime Returned
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
