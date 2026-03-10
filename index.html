@@ -1,106 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Project Playtime Returned</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-<script src="script.js" defer></script>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
+<!-- pantalla de carga -->
+
+<div id="loader">
+
+<div class="spinner"></div>
+<p>Cargando fábrica...</p>
+
+</div>
+
+<!-- partículas -->
+
+<canvas id="particles"></canvas>
+
 <header>
-    <div class="logo">PROJECT PLAYTIME RETURNED</div>
 
-    <div class="menu-toggle" id="menuToggle">
-        ☰
-    </div>
+<h1>Project Playtime Returned</h1>
 
-    <nav id="navMenu">
-        <a href="#historia">Historia</a>
-        <a href="#caracteristicas">Características</a>
-        <a href="#galeria">Galería</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#download">Descargar</a>
-    </nav>
+<button id="menuBtn">☰</button>
+
+<nav id="nav">
+
+<a href="index.html">Inicio</a>
+<a href="#trailer">Trailer</a>
+<a href="download.html">Descargar</a>
+
+</nav>
+
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>LA FÁBRICA SIGUE ABIERTA</h1>
-        <p>Seis jugadores. Una criatura. Una fábrica que nunca duerme.</p>
-        <a href="#download" class="cta">Jugar Ahora</a>
-    </div>
+
+<h2>Sobrevive en la fábrica abandonada</h2>
+
+<p>Resuelve puzzles y escapa del monstruo.</p>
+
+<a class="btn" href="download.html">Descargar</a>
+
 </section>
 
-<section id="historia" class="section">
-<h1>Historia</h1>
-<p>
-La fábrica reactivó sus sistemas tras años cerrada. 
-Los juguetes desaparecieron. Las cámaras dejaron de funcionar.
-Ahora seis operarios deben completar los puzzles industriales 
-mientras algo acecha en los conductos de ventilación.
-</p>
+<section id="trailer" class="trailer">
+
+<h2>Trailer Oficial</h2>
+
+<iframe
+src="https://www.youtube.com/embed/VIDEO_ID"
+allowfullscreen>
+</iframe>
+
 </section>
 
-<section id="caracteristicas" class="section">
-<h1>Características</h1>
-<div class="grid">
-<div class="card">
-<h3>6v1 Asimétrico</h3>
-<p>Supervivientes cooperativos contra una criatura experimental.</p>
-</div>
-<div class="card">
-<h3>Mapas Dinámicos</h3>
-<p>Eventos aleatorios que cambian cada partida.</p>
-</div>
-<div class="card">
-<h3>Sistema de Progresión</h3>
-<p>Desbloquea mejoras y ventajas únicas.</p>
-</div>
-<div class="card">
-<h3>Ambiente Industrial</h3>
-<p>Iluminación oscura, sirenas y maquinaria activa.</p>
-</div>
-</div>
-</section>
+<audio id="hoverSound" src="sounds/hover.mp3"></audio>
+<audio id="clickSound" src="sounds/click.mp3"></audio>
 
-<section id="galeria" class="section">
-<h1>Galería</h1>
-<div class="gallery">
-<div class="img"></div>
-<div class="img"></div>
-<div class="img"></div>
-</div>
-</section>
-
-<section id="roadmap" class="section">
-<h1>Roadmap</h1>
-<ul class="roadmap">
-<li>✔ Beta Cerrada</li>
-<li>✔ Sistema de Rangos</li>
-<li>🔄 Nuevo Monstruo</li>
-<li>🔜 Nuevo Mapa Industrial</li>
-<li>🔜 Soporte Mac</li>
-</ul>
-</section>
-
-<section id="download" class="section">
-<h1>Descargar</h1>
-
-<div class="platform-selector">
-<button class="platform active" data-platform="windows">Windows</button>
-<button class="platform" data-platform="linux">Linux</button>
-<button class="platform disabled">Mac (Próximamente)</button>
-</div>
-
-<a id="downloadBtn" class="download-btn" href="#">Descargar para Windows</a>
-</section>
-
-<footer>
-© 2026 Project Playtime Returned
-</footer>
+<script src="script.js"></script>
 
 </body>
 </html>
