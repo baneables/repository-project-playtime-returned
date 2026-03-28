@@ -11,8 +11,9 @@
   --yellow: #ffd93b;
   --blue: #2f6fff;
   --red: #ff2b3a;
-  --black: #111;
-  --gray: #666;
+  --green: #3bdc7b;
+  --black: #111111;
+  --gray: #666666;
   --light-gray: #f5f5f5;
   --white: #ffffff;
 }
@@ -22,7 +23,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
@@ -30,77 +31,207 @@ body {
   color: var(--black);
 }
 
-/* ------------------ NAVBAR ------------------ */
+/* ------------------ ANIMACIONES ------------------ */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ------------------ HEADER ------------------ */
 header {
   width: 100%;
-  padding: 1rem 5vw;
+  padding: 1rem 6vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--white);
-  border-bottom: 2px solid var(--light-gray);
+  border-bottom: 3px solid var(--black);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.logo {
-  font-size: 1.4rem;
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue), var(--red));
+  border: 3px solid var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 900;
-  color: var(--blue);
+  color: var(--white);
+  font-size: 1.1rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-text span:first-child {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.logo-text span:last-child {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray);
 }
 
 nav a {
-  margin-left: 2rem;
+  margin-left: 1.8rem;
   text-decoration: none;
   color: var(--black);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 nav a:hover {
   color: var(--blue);
 }
 
-/* ------------------ HERO ------------------ */
-.hero {
-  text-align: center;
-  padding: 4rem 5vw;
-}
-
-.hero img {
-  width: 260px;
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 {
-  font-size: 2.6rem;
-  font-weight: 900;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  color: var(--gray);
-  margin-bottom: 2rem;
-}
-
+/* ------------------ BOTONES ------------------ */
 .btn-primary {
   background: var(--yellow);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 800;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  font-weight: 900;
   text-decoration: none;
   color: var(--black);
   font-size: 1rem;
   border: 3px solid var(--black);
-  transition: 0.2s;
+  display: inline-block;
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
+  box-shadow: 0 6px 0 var(--black);
 }
 
-/* ------------------ SECCIÓN TARJETAS ------------------ */
+.btn-secondary {
+  background: var(--blue);
+  padding: 0.8rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 0.9rem;
+  border: 3px solid var(--black);
+  display: inline-block;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 0 var(--black);
+}
+
+/* ------------------ HERO ------------------ */
+.hero {
+  text-align: center;
+  padding: 3.5rem 6vw 3rem;
+  background: var(--light-gray);
+  border-bottom: 3px solid var(--black);
+}
+
+.hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  animation: pop-in 0.4s ease-out;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--white);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  border: 2px solid var(--black);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+
+.hero-badge span.icon {
+  font-size: 1rem;
+}
+
+.hero img {
+  width: 260px;
+  max-width: 60vw;
+  margin-bottom: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero h1 {
+  font-size: 2.7rem;
+  font-weight: 900;
+  margin-bottom: 0.6rem;
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: var(--gray);
+  margin-bottom: 1.8rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ------------------ BANNER ANCHO ------------------ */
+.banner {
+  padding: 1.4rem 6vw;
+  background: var(--yellow);
+  border-bottom: 3px solid var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+}
+
+.banner span.icon {
+  font-size: 1.2rem;
+}
+
+/* ------------------ SECCIONES GENERALES ------------------ */
 .section {
-  padding: 3rem 5vw;
+  padding: 3rem 6vw;
 }
 
 .section-title {
@@ -110,6 +241,7 @@ nav a:hover {
   text-align: center;
 }
 
+/* ------------------ TARJETAS (MODOS / FEATURES) ------------------ */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -118,15 +250,38 @@ nav a:hover {
 
 .card {
   background: var(--light-gray);
-  padding: 2rem;
-  border-radius: 20px;
+  padding: 2rem 1.6rem;
+  border-radius: 24px;
   text-align: center;
   border: 3px solid var(--black);
+  position: relative;
+  overflow: hidden;
+  animation: pop-in 0.4s ease-out;
 }
 
-.card img {
-  width: 180px;
-  margin-bottom: 1rem;
+.card::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  top: -40px;
+  right: -40px;
+  opacity: 0.4;
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  border: 3px solid var(--black);
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: var(--white);
 }
 
 .card h3 {
@@ -140,25 +295,226 @@ nav a:hover {
   font-size: 0.95rem;
 }
 
+/* ------------------ PERSONAJES ------------------ */
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.character-card {
+  background: var(--white);
+  border-radius: 24px;
+  border: 3px solid var(--black);
+  padding: 1.6rem 1.4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: pop-in 0.4s ease-out;
+}
+
+.character-tag {
+  position: absolute;
+  top: 0.9rem;
+  left: 1rem;
+  background: var(--yellow);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  border: 2px solid var(--black);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.character-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 32px;
+  border: 3px solid var(--black);
+  margin: 1.4rem auto 0.8rem;
+  background: var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+}
+
+.character-name {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin-bottom: 0.4rem;
+}
+
+.character-role {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 0.4rem;
+}
+
+.character-desc {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 0.8rem;
+}
+
+.character-meta {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* ------------------ SECCIÓN MAPAS / BANNER INTERMEDIO ------------------ */
+.map-banner {
+  padding: 2.4rem 6vw;
+  background: var(--blue);
+  color: var(--white);
+  border-top: 3px solid var(--black);
+  border-bottom: 3px solid var(--black);
+  text-align: center;
+}
+
+.map-banner h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.6rem;
+}
+
+.map-banner p {
+  font-size: 0.95rem;
+}
+
+/* ------------------ TIENDA / PRODUCTOS ------------------ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: var(--light-gray);
+  border-radius: 24px;
+  border: 3px solid var(--black);
+  padding: 1.6rem 1.4rem;
+  text-align: center;
+  animation: pop-in 0.4s ease-out;
+}
+
+.product-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 32px;
+  border: 3px solid var(--black);
+  margin: 0 auto 0.8rem;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-bottom: 0.3rem;
+}
+
+.product-price {
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+
+.product-btn {
+  background: var(--yellow);
+  border-radius: 999px;
+  padding: 0.5rem 1.4rem;
+  border: 3px solid var(--black);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--black);
+}
+
+/* ------------------ CONTACTO ------------------ */
+.contact-box {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--light-gray);
+  border-radius: 24px;
+  border: 3px solid var(--black);
+  padding: 2rem 1.8rem;
+  text-align: center;
+}
+
+.contact-box p {
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  font-size: 1.2rem;
+}
+
 /* ------------------ FOOTER ------------------ */
 footer {
   background: var(--yellow);
-  padding: 2rem 5vw;
+  padding: 1.8rem 6vw;
   text-align: center;
-  font-weight: 700;
+  font-weight: 800;
   border-top: 3px solid var(--black);
+  font-size: 0.85rem;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 800px) {
+  header {
+    padding-inline: 4vw;
+  }
+  nav {
+    display: none;
+  }
+  .hero {
+    padding-inline: 4vw;
+  }
+  .section {
+    padding-inline: 4vw;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- HEADER -->
 <header>
-  <div class="logo">Playtime Co</div>
+  <div class="logo-wrap">
+    <div class="logo-icon">PR</div>
+    <div class="logo-text">
+      <span>Playtime Co</span>
+      <span>Project Playtime Returned</span>
+    </div>
+  </div>
   <nav>
     <a href="#juego">El Juego</a>
     <a href="#personajes">Personajes</a>
+    <a href="#mapas">Mapas</a>
     <a href="#tienda">Tienda</a>
     <a href="#contacto">Contacto</a>
   </nav>
@@ -166,40 +522,145 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <img src="https://playtimeco.store/cdn/shop/files/Huggy.png" alt="Monstruo">
-  <h1>Project Playtime Returned</h1>
-  <p>Un nuevo capítulo dentro de la fábrica. Más juguetes. Más secretos. Más peligro.</p>
-  <a class="btn-primary" href="#">Wishlist en Steam</a>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="icon">🎲</span>
+      <span>Nuevo juego multijugador de Playtime Co</span>
+    </div>
+    <!-- Puedes cambiar esta imagen por tu logo / monstruo -->
+    <img src="https://playtimeco.store/cdn/shop/files/Huggy.png" alt="Monstruo">
+    <h1>Project Playtime <span>Returned</span></h1>
+    <p>Un monstruo, varios empleados atrapados y una fábrica llena de juguetes que nunca debieron volver.</p>
+    <div class="hero-buttons">
+      <a class="btn-primary" href="#">Wishlist en Steam</a>
+      <a class="btn-secondary" href="#trailer">Ver tráiler</a>
+    </div>
+  </div>
 </section>
 
-<!-- SECCIÓN TARJETAS -->
-<section class="section" id="juego">
-  <h2 class="section-title">Modos de Juego</h2>
+<!-- BANNER -->
+<div class="banner">
+  <span class="icon">⚠️</span>
+  <span>Advertencia: algunos juguetes pueden abandonar su zona de contención durante el turno de noche.</span>
+</div>
 
+<!-- SECCIÓN: EL JUEGO -->
+<section class="section" id="juego">
+  <h2 class="section-title">Cómo se juega</h2>
   <div class="cards">
     <div class="card">
-      <img src="https://playtimeco.store/cdn/shop/files/Boxy.png" alt="">
+      <div class="card-icon">👹</div>
       <h3>Monstruo</h3>
-      <p>Caza a los empleados y evita que completen los puzzles.</p>
+      <p>Caza a los empleados, controla la fábrica y usa habilidades únicas para impedir su escape.</p>
     </div>
-
     <div class="card">
-      <img src="https://playtimeco.store/cdn/shop/files/Kissy.png" alt="">
+      <div class="card-icon">🧑‍🏭</div>
       <h3>Sobrevivientes</h3>
-      <p>Trabajad juntos para activar las máquinas y escapar.</p>
+      <p>Trabajad juntos para completar puzzles, activar máquinas de juguete y abrir la ruta de salida.</p>
     </div>
-
     <div class="card">
-      <img src="https://playtimeco.store/cdn/shop/files/Catnap.png" alt="">
-      <h3>Mapas</h3>
-      <p>Explora zonas nuevas de la fábrica Playtime Co.</p>
+      <div class="card-icon">🧩</div>
+      <h3>Puzzles y estaciones</h3>
+      <p>Estaciones de juguete repartidas por la fábrica que requieren coordinación, memoria y algo de suerte.</p>
     </div>
+  </div>
+</section>
+
+<!-- SECCIÓN: PERSONAJES -->
+<section class="section" id="personajes">
+  <h2 class="section-title">Personajes</h2>
+  <div class="characters-grid">
+    <article class="character-card">
+      <div class="character-tag">Monstruo</div>
+      <div class="character-img">👁️</div>
+      <div class="character-name">[Tu Monstruo Principal]</div>
+      <div class="character-role">Prototipo fuera de contención</div>
+      <p class="character-desc">
+        Un experimento de juguete que aprendió demasiado de la fábrica. Se mueve rápido, escucha todo y no olvida a ningún empleado.
+      </p>
+      <div class="character-meta">Estilo: agresivo · Dificultad: alta</div>
+    </article>
+
+    <article class="character-card">
+      <div class="character-tag">Sobreviviente</div>
+      <div class="character-img">🔧</div>
+      <div class="character-name">Técnico de mantenimiento</div>
+      <div class="character-role">Control de mapa</div>
+      <p class="character-desc">
+        Puede acceder a paneles bloqueados y rutas alternativas. Ideal para abrir atajos y rutas de escape para el equipo.
+      </p>
+      <div class="character-meta">Rol: soporte · Dificultad: media</div>
+    </article>
+
+    <article class="character-card">
+      <div class="character-tag">Sobreviviente</div>
+      <div class="character-img">📦</div>
+      <div class="character-name">Empleado de almacén</div>
+      <div class="character-role">Objetivos y puzzles</div>
+      <p class="character-desc">
+        Conoce cada estantería y cada caja. Perfecto para completar estaciones de juguete sin perderse.
+      </p>
+      <div class="character-meta">Rol: objetivo · Dificultad: baja</div>
+    </article>
+  </div>
+</section>
+
+<!-- BANNER MAPAS -->
+<section class="map-banner" id="mapas">
+  <h2>Mapas de la fábrica</h2>
+  <p>Almacenes, zonas de prototipos, oficinas y áreas “no autorizadas”. Cada mapa cambia la forma de jugar.</p>
+</section>
+
+<!-- SECCIÓN: TIENDA / MERCH -->
+<section class="section" id="tienda">
+  <h2 class="section-title">Tienda de la fábrica</h2>
+  <div class="products-grid">
+    <article class="product-card">
+      <div class="product-img">🎮</div>
+      <div class="product-name">Copia digital del juego</div>
+      <div class="product-price">Próximamente</div>
+      <a href="#" class="product-btn">Ver detalles</a>
+    </article>
+
+    <article class="product-card">
+      <div class="product-img">🧸</div>
+      <div class="product-name">Peluche del monstruo</div>
+      <div class="product-price">Próximamente</div>
+      <a href="#" class="product-btn">Ver detalles</a>
+    </article>
+
+    <article class="product-card">
+      <div class="product-img">👕</div>
+      <div class="product-name">Camiseta oficial</div>
+      <div class="product-price">Próximamente</div>
+      <a href="#" class="product-btn">Ver detalles</a>
+    </article>
+  </div>
+</section>
+
+<!-- SECCIÓN: CONTACTO / COMUNIDAD -->
+<section class="section" id="contacto">
+  <h2 class="section-title">Contacto y comunidad</h2>
+  <div class="contact-box">
+    <p>
+      ¿Quieres seguir el desarrollo de Project Playtime Returned, reportar bugs o enviar ideas de juguetes?
+      Únete a la comunidad de la fábrica:
+    </p>
+    <div class="contact-icons">
+      <div class="contact-icon">💬</div>
+      <div class="contact-icon">🎥</div>
+      <div class="contact-icon">🐦</div>
+      <div class="contact-icon">🕹️</div>
+    </div>
+    <p style="margin-top:1rem;font-weight:700;font-size:0.9rem;">
+      Discord · YouTube · X / Twitter · Steam
+    </p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  © 2026 Playtime Co – Project Playtime Returned
+  © 2026 Playtime Co – Proyecto interno: Project Playtime Returned
 </footer>
 
 </body>
