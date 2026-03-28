@@ -1,71 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Playtime Returned</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Project Playtime Returned</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <header class="navbar">
+    <div class="logo">Project Playtime Returned</div>
+    <nav>
+      <a href="#juego">El juego</a>
+      <a href="#personajes">Personajes</a>
+      <a href="#media">Media</a>
+      <a href="#comunidad">Comunidad</a>
+    </nav>
+  </header>
 
-<div id="loader">
-<div class="spinner"></div>
-<p>Cargando fábrica...</p>
-</div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Bienvenido de nuevo a la fábrica</h1>
+      <p>Sobrevive a los juguetes… o conviértete en uno de ellos.</p>
+      <div class="hero-buttons">
+        <a class="btn primary">Wishlist en Steam</a>
+        <a class="btn secondary">Ver tráiler</a>
+      </div>
+    </div>
+  </section>
 
-<div class="parallax"></div>
+  <section id="juego" class="section">
+    <h2>Cómo se juega</h2>
+    <div class="two-columns">
+      <div>
+        <h3>Monstruo</h3>
+        <p>Caza a los supervivientes, escucha sus pasos y controla la fábrica.</p>
+      </div>
+      <div>
+        <h3>Sobrevivientes</h3>
+        <p>Coopera, resuelve puzzles y encuentra la salida antes de que sea tarde.</p>
+      </div>
+    </div>
+  </section>
 
-<canvas id="particles"></canvas>
+  <section id="personajes" class="section">
+    <h2>Personajes</h2>
+    <div class="card-grid">
+      <article class="card">
+        <h3>Monstruo A</h3>
+        <p>Un juguete roto con hambre de compañía.</p>
+      </article>
+      <article class="card">
+        <h3>Superviviente 1</h3>
+        <p>Empleado de Playtime Co atrapado en el turno de noche.</p>
+      </article>
+    </div>
+  </section>
 
-<header>
-
-<h1>Project Playtime Returned</h1>
-
-<button id="menuBtn">☰</button>
-
-<nav id="nav">
-<a href="index.html">Inicio</a>
-<a href="#trailer">Trailer</a>
-<a href="download.html">Descargar</a>
-</nav>
-
-</header>
-
-<section class="hero">
-
-<h2>Sobrevive en la fábrica abandonada</h2>
-<p>Escapa del monstruo y resuelve puzzles.</p>
-
-<a class="btn" href="download.html">Descargar</a>
-
-</section>
-
-<section class="pipes">
-
-<div class="pipe">
-<div class="smoke"></div>
-</div>
-
-<div class="pipe">
-<div class="smoke"></div>
-</div>
-
-</section>
-
-<section id="trailer" class="trailer">
-
-<h2>Trailer Oficial</h2>
-
-<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-
-</section>
-
-<audio id="hoverSound" src="sounds/hover.mp3"></audio>
-<audio id="clickSound" src="sounds/click.mp3"></audio>
-
-<script src="js/script.js"></script>
-
+  <footer id="comunidad" class="footer">
+    <p>Únete a la comunidad</p>
+    <div class="links">
+      <a>Discord</a>
+      <a>Steam</a>
+      <a>YouTube</a>
+    </div>
+  </footer>
 </body>
 </html>
