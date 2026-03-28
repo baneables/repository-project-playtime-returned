@@ -1,209 +1,73 @@
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
+:root {
+  --blue-toy: #2f6fff;
+  --red-toy: #ff2b3a;
+  --yellow-toy: #ffd93b;
+  --dark-bg: #050814;
+  --card-bg: #111528;
+  --text-main: #f5f5f5;
 }
 
-body{
-cursor:url("../cursor/cursor.png"), auto;
-background:#111;
-color:white;
-overflow-x:hidden;
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1b2340 0, var(--dark-bg) 55%);
+  color: var(--text-main);
 }
 
-/* PARALLAX BACKGROUND */
-
-.parallax{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:url("../images/factory-bg.jpg");
-background-size:cover;
-background-position:center;
-transform:translateZ(-1px) scale(2);
-z-index:-2;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
 }
 
-/* HEADER */
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px;
-background:rgba(0,0,0,0.7);
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
 }
 
-nav a{
-margin:10px;
-color:white;
-text-decoration:none;
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 12px #000;
 }
 
-#menuBtn{
-display:none;
-font-size:28px;
-background:none;
-border:none;
-color:white;
+.btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
 }
 
-/* HERO */
-
-.hero{
-text-align:center;
-padding:120px 20px;
-animation:fadeIn 2s;
+.btn.primary {
+  background: linear-gradient(135deg, var(--red-toy), var(--yellow-toy));
+  color: #000;
 }
 
-.hero h2{
-font-size:42px;
-margin-bottom:20px;
+.btn.secondary {
+  border: 2px solid var(--yellow-toy);
+  color: var(--yellow-toy);
 }
 
-.btn{
-background:#ff3b3b;
-padding:15px 30px;
-border-radius:30px;
-color:white;
-text-decoration:none;
-transition:0.3s;
+.section {
+  padding: 3rem 10vw;
 }
 
-.btn:hover{
-transform:scale(1.15);
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
-/* TRAILER */
-
-.trailer{
-text-align:center;
-padding:80px 20px;
-}
-
-.trailer iframe{
-width:80%;
-height:450px;
-border-radius:20px;
-}
-
-/* LOADER */
-
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:black;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-z-index:999;
-}
-
-.spinner{
-width:60px;
-height:60px;
-border:5px solid #333;
-border-top:5px solid red;
-border-radius:50%;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-to{transform:rotate(360deg)}
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(40px)}
-to{opacity:1;transform:translateY(0)}
-}
-
-/* INDUSTRIAL LIGHTS */
-
-body::after{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:radial-gradient(circle at 50% 10%, rgba(255,255,200,0.15), transparent 40%);
-animation:flicker 3s infinite;
-pointer-events:none;
-}
-
-@keyframes flicker{
-0%{opacity:0.2}
-50%{opacity:0.4}
-100%{opacity:0.2}
-}
-
-/* PIPES + SMOKE */
-
-.pipes{
-display:flex;
-justify-content:center;
-gap:200px;
-padding:60px;
-}
-
-.pipe{
-width:40px;
-height:120px;
-background:#444;
-position:relative;
-}
-
-.smoke{
-position:absolute;
-bottom:100%;
-left:50%;
-width:10px;
-height:10px;
-background:rgba(200,200,200,0.3);
-border-radius:50%;
-animation:smoke 4s infinite;
-}
-
-@keyframes smoke{
-0%{transform:translateX(-50%) translateY(0) scale(1);opacity:0.4}
-100%{transform:translateX(-50%) translateY(-150px) scale(3);opacity:0}
-}
-
-/* PARTICLES */
-
-#particles{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-#menuBtn{display:block}
-
-nav{
-display:none;
-position:absolute;
-top:70px;
-left:0;
-background:black;
-width:100%;
-flex-direction:column;
-}
-
-nav.show{
-display:flex;
-}
-
+.card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
 }
