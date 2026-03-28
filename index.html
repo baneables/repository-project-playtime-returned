@@ -11,9 +11,8 @@
   --yellow: #ffd93b;
   --blue: #2f6fff;
   --red: #ff2b3a;
-  --green: #3bdc7b;
-  --black: #111111;
-  --gray: #666666;
+  --black: #111;
+  --gray: #666;
   --light-gray: #f5f5f5;
   --white: #ffffff;
 }
@@ -23,7 +22,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -38,8 +37,8 @@ body {
   100% { transform: translateY(0); }
 }
 
-@keyframes pop-in {
-  0% { transform: scale(0.9); opacity: 0; }
+@keyframes pop {
+  0% { transform: scale(0.95); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
 
@@ -64,8 +63,8 @@ header {
 }
 
 .logo-icon {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--blue), var(--red));
   border: 3px solid var(--black);
@@ -129,107 +128,44 @@ nav a:hover {
   box-shadow: 0 6px 0 var(--black);
 }
 
-.btn-secondary {
-  background: var(--blue);
-  padding: 0.8rem 1.8rem;
-  border-radius: 999px;
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--white);
-  font-size: 0.9rem;
-  border: 3px solid var(--black);
-  display: inline-block;
-  transition: transform 0.15s, box-shadow 0.15s;
-}
-
-.btn-secondary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 0 var(--black);
-}
-
 /* ------------------ HERO ------------------ */
 .hero {
   text-align: center;
-  padding: 3.5rem 6vw 3rem;
+  padding: 4rem 6vw;
   background: var(--light-gray);
   border-bottom: 3px solid var(--black);
 }
 
-.hero-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  animation: pop-in 0.4s ease-out;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: var(--white);
-  border-radius: 999px;
-  padding: 0.3rem 0.9rem;
-  border: 2px solid var(--black);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 1rem;
-}
-
-.hero-badge span.icon {
-  font-size: 1rem;
-}
-
 .hero img {
   width: 260px;
-  max-width: 60vw;
-  margin-bottom: 1.5rem;
   animation: float 3s ease-in-out infinite;
 }
 
 .hero h1 {
-  font-size: 2.7rem;
+  font-size: 2.8rem;
   font-weight: 900;
-  margin-bottom: 0.6rem;
-}
-
-.hero h1 span {
-  color: var(--blue);
+  margin-top: 1rem;
 }
 
 .hero p {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--gray);
-  margin-bottom: 1.8rem;
+  margin: 1rem auto 2rem;
+  max-width: 600px;
 }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* ------------------ BANNER ANCHO ------------------ */
+/* ------------------ BANNER ------------------ */
 .banner {
   padding: 1.4rem 6vw;
   background: var(--yellow);
   border-bottom: 3px solid var(--black);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  text-align: center;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 0.85rem;
 }
 
-.banner span.icon {
-  font-size: 1.2rem;
-}
-
-/* ------------------ SECCIONES GENERALES ------------------ */
+/* ------------------ SECCIONES ------------------ */
 .section {
   padding: 3rem 6vw;
 }
@@ -241,7 +177,22 @@ nav a:hover {
   text-align: center;
 }
 
-/* ------------------ TARJETAS (MODOS / FEATURES) ------------------ */
+/* ------------------ PLACEHOLDER IMAGES ------------------ */
+.placeholder {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: var(--white);
+  border: 3px solid var(--black);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+/* ------------------ CARDS ------------------ */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -250,44 +201,17 @@ nav a:hover {
 
 .card {
   background: var(--light-gray);
-  padding: 2rem 1.6rem;
+  padding: 2rem;
   border-radius: 24px;
+  border: 3px solid var(--black);
   text-align: center;
-  border: 3px solid var(--black);
-  position: relative;
-  overflow: hidden;
-  animation: pop-in 0.4s ease-out;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  top: -40px;
-  right: -40px;
-  opacity: 0.4;
-}
-
-.card-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 24px;
-  border: 3px solid var(--black);
-  margin: 0 auto 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  background: var(--white);
+  animation: pop 0.4s ease-out;
 }
 
 .card h3 {
   font-size: 1.3rem;
   font-weight: 800;
-  margin-bottom: 0.5rem;
+  margin: 1rem 0 0.5rem;
 }
 
 .card p {
@@ -306,196 +230,64 @@ nav a:hover {
   background: var(--white);
   border-radius: 24px;
   border: 3px solid var(--black);
-  padding: 1.6rem 1.4rem;
+  padding: 1.6rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  animation: pop-in 0.4s ease-out;
+  animation: pop 0.4s ease-out;
 }
 
 .character-tag {
-  position: absolute;
-  top: 0.9rem;
-  left: 1rem;
   background: var(--yellow);
   border-radius: 999px;
-  padding: 0.2rem 0.7rem;
+  padding: 0.3rem 0.8rem;
   border: 2px solid var(--black);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.character-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 32px;
-  border: 3px solid var(--black);
-  margin: 1.4rem auto 0.8rem;
-  background: var(--light-gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.4rem;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .character-name {
   font-size: 1.2rem;
   font-weight: 900;
-  margin-bottom: 0.4rem;
-}
-
-.character-role {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--blue);
-  margin-bottom: 0.4rem;
+  margin-top: 1rem;
 }
 
 .character-desc {
   font-size: 0.9rem;
   color: var(--gray);
-  margin-bottom: 0.8rem;
-}
-
-.character-meta {
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-/* ------------------ SECCIÓN MAPAS / BANNER INTERMEDIO ------------------ */
-.map-banner {
-  padding: 2.4rem 6vw;
-  background: var(--blue);
-  color: var(--white);
-  border-top: 3px solid var(--black);
-  border-bottom: 3px solid var(--black);
-  text-align: center;
-}
-
-.map-banner h2 {
-  font-size: 2rem;
-  font-weight: 900;
-  margin-bottom: 0.6rem;
-}
-
-.map-banner p {
-  font-size: 0.95rem;
-}
-
-/* ------------------ TIENDA / PRODUCTOS ------------------ */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-}
-
-.product-card {
-  background: var(--light-gray);
-  border-radius: 24px;
-  border: 3px solid var(--black);
-  padding: 1.6rem 1.4rem;
-  text-align: center;
-  animation: pop-in 0.4s ease-out;
-}
-
-.product-img {
-  width: 140px;
-  height: 140px;
-  border-radius: 32px;
-  border: 3px solid var(--black);
-  margin: 0 auto 0.8rem;
-  background: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.2rem;
-}
-
-.product-name {
-  font-size: 1.1rem;
-  font-weight: 900;
-  margin-bottom: 0.3rem;
-}
-
-.product-price {
-  font-size: 0.95rem;
-  font-weight: 800;
-  margin-bottom: 0.6rem;
-}
-
-.product-btn {
-  background: var(--yellow);
-  border-radius: 999px;
-  padding: 0.5rem 1.4rem;
-  border: 3px solid var(--black);
-  font-size: 0.85rem;
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--black);
-}
-
-/* ------------------ CONTACTO ------------------ */
-.contact-box {
-  max-width: 640px;
-  margin: 0 auto;
-  background: var(--light-gray);
-  border-radius: 24px;
-  border: 3px solid var(--black);
-  padding: 2rem 1.8rem;
-  text-align: center;
-}
-
-.contact-box p {
-  font-size: 0.95rem;
-  color: var(--gray);
-  margin-bottom: 1rem;
-}
-
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
   margin-top: 0.5rem;
 }
 
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+/* ------------------ PERKS ------------------ */
+.perk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.perk-card {
+  background: var(--light-gray);
+  border-radius: 24px;
   border: 3px solid var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--white);
+  padding: 1.6rem;
+  text-align: center;
+  animation: pop 0.4s ease-out;
+}
+
+.perk-card h3 {
   font-size: 1.2rem;
+  font-weight: 900;
+  margin: 1rem 0;
 }
 
 /* ------------------ FOOTER ------------------ */
 footer {
   background: var(--yellow);
-  padding: 1.8rem 6vw;
+  padding: 2rem 6vw;
   text-align: center;
   font-weight: 800;
   border-top: 3px solid var(--black);
-  font-size: 0.85rem;
-}
-
-/* ------------------ RESPONSIVE ------------------ */
-@media (max-width: 800px) {
-  header {
-    padding-inline: 4vw;
-  }
-  nav {
-    display: none;
-  }
-  .hero {
-    padding-inline: 4vw;
-  }
-  .section {
-    padding-inline: 4vw;
-  }
 }
 </style>
 </head>
@@ -512,155 +304,110 @@ footer {
     </div>
   </div>
   <nav>
-    <a href="#juego">El Juego</a>
+    <a href="#gamemode">Gamemode</a>
     <a href="#personajes">Personajes</a>
-    <a href="#mapas">Mapas</a>
-    <a href="#tienda">Tienda</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#perks">Perks</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">
-      <span class="icon">🎲</span>
-      <span>Nuevo juego multijugador de Playtime Co</span>
-    </div>
-    <!-- Puedes cambiar esta imagen por tu logo / monstruo -->
-    <img src="https://playtimeco.store/cdn/shop/files/Huggy.png" alt="Monstruo">
-    <h1>Project Playtime <span>Returned</span></h1>
-    <p>Un monstruo, varios empleados atrapados y una fábrica llena de juguetes que nunca debieron volver.</p>
-    <div class="hero-buttons">
-      <a class="btn-primary" href="#">Wishlist en Steam</a>
-      <a class="btn-secondary" href="#trailer">Ver tráiler</a>
-    </div>
-  </div>
+  <img src="https://playtimeco.store/cdn/shop/files/Huggy.png" alt="">
+  <h1>Project Playtime Returned</h1>
+  <p>Un nuevo capítulo dentro de la fábrica. Más juguetes. Más secretos. Más peligro.</p>
+  <a class="btn-primary" href="#">Wishlist en Steam</a>
 </section>
 
 <!-- BANNER -->
 <div class="banner">
-  <span class="icon">⚠️</span>
-  <span>Advertencia: algunos juguetes pueden abandonar su zona de contención durante el turno de noche.</span>
+  ⚠️ Advertencia: algunos juguetes pueden abandonar su zona de contención
 </div>
 
-<!-- SECCIÓN: EL JUEGO -->
-<section class="section" id="juego">
-  <h2 class="section-title">Cómo se juega</h2>
+<!-- GAMEMODE -->
+<section class="section" id="gamemode">
+  <h2 class="section-title">Gamemode</h2>
   <div class="cards">
     <div class="card">
-      <div class="card-icon">👹</div>
-      <h3>Monstruo</h3>
-      <p>Caza a los empleados, controla la fábrica y usa habilidades únicas para impedir su escape.</p>
+      <div class="placeholder">IMAGE HERE</div>
+      <h3>Modo Principal</h3>
+      <p>1 Monstruo vs 4–5 empleados atrapados en la fábrica.</p>
     </div>
     <div class="card">
-      <div class="card-icon">🧑‍🏭</div>
-      <h3>Sobrevivientes</h3>
-      <p>Trabajad juntos para completar puzzles, activar máquinas de juguete y abrir la ruta de salida.</p>
+      <div class="placeholder">IMAGE HERE</div>
+      <h3>Estaciones de Juguete</h3>
+      <p>Completa puzzles para activar las máquinas y abrir la salida.</p>
     </div>
     <div class="card">
-      <div class="card-icon">🧩</div>
-      <h3>Puzzles y estaciones</h3>
-      <p>Estaciones de juguete repartidas por la fábrica que requieren coordinación, memoria y algo de suerte.</p>
+      <div class="placeholder">IMAGE HERE</div>
+      <h3>Escape Final</h3>
+      <p>Corre hacia la salida antes de que el monstruo te alcance.</p>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN: PERSONAJES -->
+<!-- PERSONAJES -->
 <section class="section" id="personajes">
   <h2 class="section-title">Personajes</h2>
   <div class="characters-grid">
-    <article class="character-card">
+    <div class="character-card">
       <div class="character-tag">Monstruo</div>
-      <div class="character-img">👁️</div>
-      <div class="character-name">[Tu Monstruo Principal]</div>
-      <div class="character-role">Prototipo fuera de contención</div>
-      <p class="character-desc">
-        Un experimento de juguete que aprendió demasiado de la fábrica. Se mueve rápido, escucha todo y no olvida a ningún empleado.
-      </p>
-      <div class="character-meta">Estilo: agresivo · Dificultad: alta</div>
-    </article>
-
-    <article class="character-card">
-      <div class="character-tag">Sobreviviente</div>
-      <div class="character-img">🔧</div>
-      <div class="character-name">Técnico de mantenimiento</div>
-      <div class="character-role">Control de mapa</div>
-      <p class="character-desc">
-        Puede acceder a paneles bloqueados y rutas alternativas. Ideal para abrir atajos y rutas de escape para el equipo.
-      </p>
-      <div class="character-meta">Rol: soporte · Dificultad: media</div>
-    </article>
-
-    <article class="character-card">
-      <div class="character-tag">Sobreviviente</div>
-      <div class="character-img">📦</div>
-      <div class="character-name">Empleado de almacén</div>
-      <div class="character-role">Objetivos y puzzles</div>
-      <p class="character-desc">
-        Conoce cada estantería y cada caja. Perfecto para completar estaciones de juguete sin perderse.
-      </p>
-      <div class="character-meta">Rol: objetivo · Dificultad: baja</div>
-    </article>
-  </div>
-</section>
-
-<!-- BANNER MAPAS -->
-<section class="map-banner" id="mapas">
-  <h2>Mapas de la fábrica</h2>
-  <p>Almacenes, zonas de prototipos, oficinas y áreas “no autorizadas”. Cada mapa cambia la forma de jugar.</p>
-</section>
-
-<!-- SECCIÓN: TIENDA / MERCH -->
-<section class="section" id="tienda">
-  <h2 class="section-title">Tienda de la fábrica</h2>
-  <div class="products-grid">
-    <article class="product-card">
-      <div class="product-img">🎮</div>
-      <div class="product-name">Copia digital del juego</div>
-      <div class="product-price">Próximamente</div>
-      <a href="#" class="product-btn">Ver detalles</a>
-    </article>
-
-    <article class="product-card">
-      <div class="product-img">🧸</div>
-      <div class="product-name">Peluche del monstruo</div>
-      <div class="product-price">Próximamente</div>
-      <a href="#" class="product-btn">Ver detalles</a>
-    </article>
-
-    <article class="product-card">
-      <div class="product-img">👕</div>
-      <div class="product-name">Camiseta oficial</div>
-      <div class="product-price">Próximamente</div>
-      <a href="#" class="product-btn">Ver detalles</a>
-    </article>
-  </div>
-</section>
-
-<!-- SECCIÓN: CONTACTO / COMUNIDAD -->
-<section class="section" id="contacto">
-  <h2 class="section-title">Contacto y comunidad</h2>
-  <div class="contact-box">
-    <p>
-      ¿Quieres seguir el desarrollo de Project Playtime Returned, reportar bugs o enviar ideas de juguetes?
-      Únete a la comunidad de la fábrica:
-    </p>
-    <div class="contact-icons">
-      <div class="contact-icon">💬</div>
-      <div class="contact-icon">🎥</div>
-      <div class="contact-icon">🐦</div>
-      <div class="contact-icon">🕹️</div>
+      <div class="placeholder">IMAGE HERE</div>
+      <div class="character-name">[Tu Monstruo]</div>
+      <p class="character-desc">Un prototipo fuera de contención con habilidades únicas.</p>
     </div>
-    <p style="margin-top:1rem;font-weight:700;font-size:0.9rem;">
-      Discord · YouTube · X / Twitter · Steam
-    </p>
+
+    <div class="character-card">
+      <div class="character-tag">Especialista</div>
+      <div class="placeholder">IMAGE HERE</div>
+      <div class="character-name">Técnico</div>
+      <p class="character-desc">Accede a paneles bloqueados y rutas alternativas.</p>
+    </div>
+
+    <div class="character-card">
+      <div class="character-tag">Empleado</div>
+      <div class="placeholder">IMAGE HERE</div>
+      <div class="character-name">Operario</div>
+      <p class="character-desc">Completa puzzles y activa estaciones de juguete.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PERKS -->
+<section class="section" id="perks">
+  <h2 class="section-title">Perks</h2>
+
+  <h3 style="text-align:center;font-size:1.4rem;font-weight:900;margin-bottom:1rem;">Monstruo</h3>
+  <div class="perk-grid">
+    <div class="perk-card">
+      <div class="placeholder">IMAGE HERE</div>
+      <h3>Perk 1</h3>
+      <p>Aumenta tu velocidad al detectar ruido.</p>
+    </div>
+    <div class="perk-card">
+      <div class="placeholder">IMAGE HERE</div>
+      <h3>Perk 2</h3>
+      <p>Reduce el tiempo de recuperación tras atacar.</p>
+    </div>
+  </div>
+
+  <h3 style="text-align:center;font-size:1.4rem;font-weight:900;margin:2rem 0 1rem;">Especialista</h3>
+  <div class="perk-grid">
+    <div class="perk-card">
+      <div class="placeholder">IMAGE HERE</div>
+      <h3>Perk 1</h3>
+      <p>Repara estaciones más rápido.</p>
+    </div>
+    <div class="perk-card">
+      <div class="placeholder">IMAGE HERE</div>
+      <h3>Perk 2</h3>
+      <p>Puede abrir rutas secretas.</p>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  © 2026 Playtime Co – Proyecto interno: Project Playtime Returned
+  © 2026 Playtime Co – Project Playtime Returned
 </footer>
 
 </body>
